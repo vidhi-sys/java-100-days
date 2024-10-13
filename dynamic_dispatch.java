@@ -11,7 +11,7 @@ class Cat extends Animal {
     void sound() {
         System.out.println("Cat meows");
     }}
-public class ryntime {
+public class dynamic_dispatch {
     public static void main(String[] args) {
         Animal myDog = new Dog(); // Upcasting
         Animal myCat = new Cat(); // Upcasting
