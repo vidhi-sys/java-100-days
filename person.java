@@ -3,6 +3,9 @@
 //that extend the Person class and implement the respective methods to describe how each person eats and exercises
 abstract class Person{
     abstract void eat();
+    public void sleep(){
+        //abstract methods can have both abstract and concrete methods
+    }
     abstract void exercise();
 
 }
