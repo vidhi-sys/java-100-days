@@ -1,0 +1,50 @@
+
+
+class Tree_max_val {
+    Tree_max_val left;
+    Tree_max_val right;
+    int val;
+    Tree_max_val(int val){
+        this.val=val;
+    }
+    public static void display(Tree_max_val root){
+        if(root==null){
+            return;
+        }
+       
+        
+        System.out.println(root.val+" ");
+         display(root.left);
+        display(root.right);
+        
+    }
+    
+    public static int max_val(Tree_max_val root){
+        if (root==null){
+            return Integer.MIN_VALUE;
+            
+        }
+        return Math.max(root.val,Math.max(max_val(root.left),max_val(root.right)));
+        
+    }
+    public static int min_val(Tree_max_val root){
+        if (root==null){
+            return Integer.MAX_VALUE;
+            
+        }
+        return Math.min(root.val,Math.min(min_val(root.left),min_val(root.right)));
+        
+    }
+    public static void main(String[] args) {
+       Tree_max_val a=new Tree_max_val(10);
+       Tree_max_val b=new Tree_max_val(16);
+    Tree_max_val c=new Tree_max_val(1);
+      Tree_max_val d =new Tree_max_val(13);
+       a.left=b;
+       a.right=c;
+       b.left=d;
+      System.out.println("Maximum value amongst the tree is: "+ max_val(a));
+       System.out.println("Minimum value amongst the tree is: "+min_val(a));
+       
+    }
+}
